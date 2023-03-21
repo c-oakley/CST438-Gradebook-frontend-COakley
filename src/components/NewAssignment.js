@@ -9,11 +9,6 @@ class NewAssignment extends React.Component {
     };
 
     handleCreateAssignment = () => {
-        // verify attempt is valid integer
-        // if ( ! (/^[0-9]+$/.test(this.state.attempt) ) ) {  
-        //     this.setState({message: 'Enter valid integer.'});
-        //     return;
-        // }
         fetch(`http://localhost:8081/course/${this.state.courseID}/createAssignment`, {
             method: 'POST',
             headers: {
@@ -26,7 +21,6 @@ class NewAssignment extends React.Component {
         })
             .then(response => response.json() )
             .then(responseData => {
-                //console.log(responseData);
                 const { success } = responseData;
                 this.setState({
                 success: success, 
@@ -64,3 +58,4 @@ class NewAssignment extends React.Component {
 }
 
 export default NewAssignment;
+// comment
